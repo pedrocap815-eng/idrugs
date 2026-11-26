@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a80f25">
+  <meta name="description" content="iDrugs — catálogo digital.">
+  <title>iDrugs — Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="iDrugs início">
+      <span class="brand-mark">i</span><span>DRUGS<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a class="nav-link active" href="#catalogo">Loja</a>
+      <a class="nav-link" href="#sobre">Sobre</a>
+      <a class="nav-link" href="#pedidos">Meus pedidos</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button search-toggle" id="focusSearch" aria-label="Ir para pesquisa">⌕</button>
+      <button class="cart-trigger" id="openCart"><span class="cart-symbol">▣</span><span class="cart-label">Carrinho</span><b id="cartCount">0</b></button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> MARKETPLACE EXCLUSIVO</div>
+        <h1>IDRUGS<br><span>ESTOQUE ATUALIZADO</span><br>TODOS OS DIAS!</h1>
+        <p>Encontre todos os itens que você procura aqui! Navegue pelo catálogo e monte seu pedido.</p>
+        <a class="primary-cta" href="#catalogo">EXPLORAR CATÁLOGO <span>↗</span></a>
+        <div class="hero-meta"><span><i></i> CATÁLOGO ORGANIZADO</span><span>•</span><span>EXPERIÊNCIA iDRUGS</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-ring ring-a"></div><div class="art-ring ring-b"></div>
+        <div class="art-core"><span>i</span><small>DRUGS</small></div>
+        <div class="art-tag tag-top">SEU MARKETPLACE</div><div class="art-tag tag-bottom">DESDE SEMPRE. SEMPRE À FRENTE.</div>
+        <div class="art-line"></div>
+      </div>
+      <div class="hero-index">01 <span>/</span> 03</div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>01</strong><span>CATÁLOGO<br>EM UM SÓ LUGAR</span></div>
+      <div><strong>02</strong><span>NAVEGAÇÃO<br>RÁPIDA</span></div>
+      <div><strong>03</strong><span>SEU CARRINHO<br>SEMPRE À MÃO</span></div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div><div class="eyebrow">ESCOLHA SUA CATEGORIA</div><h2>CATÁLOGO<span>.</span></h2></div>
+        <p>Explore os produtos disponíveis<br>e encontre o que precisa.</p>
+      </div>
+      <div class="catalog-tools">
+        <div class="category-list" id="categoryList" aria-label="Categorias"></div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar produto..." autocomplete="off"><kbd>⌘ K</kbd></label>
+      </div>
+      <div class="results-line"><span id="resultsCount">0 PRODUTOS</span><span class="sort-label">ORDENAR <select id="sortSelect"><option value="default">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option><option value="az">Nome A–Z</option></select></span></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><div>⌕</div><h3>NENHUM PRODUTO ENCONTRADO</h3><p>Tente outra busca ou selecione uma categoria diferente.</p></div>
+    </section>
+
+    <section class="promo" id="sobre">
+      <div class="promo-mark">i<span>DRUGS</span></div>
+      <div><div class="eyebrow">IDENTIDADE iDRUGS</div><h2>DISCRIÇÂO.<br><span>EXPERIÊNCIA. QUALIDADE.</span></h2><p>Aqui você encontra tudo o que precisa, para dar aquele boost nos seus PVPs.</p></div>
+      <a href="#catalogo" class="outline-cta">VOLTAR À LOJA ↗</a>
+    </section>
+
+    <section class="orders-section" id="pedidos">
+      <div><div class="eyebrow">ACOMPANHAMENTO</div><h2>MEUS PEDIDOS<span>.</span></h2><p>Os pedidos reais precisam ser conectados ao sistema de checkout da sua plataforma.</p></div>
+      <button class="secondary-button" id="ordersInfo">COMO FUNCIONA <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">i</span><span>DRUGS<span class="brand-dot">.</span></span></a><span>© <span id="year"></span> iDrugs. Todos os direitos reservados.</span><a href="#catalogo">VOLTAR AO TOPO ↑</a></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true">
+    <div class="drawer-head"><div><div class="eyebrow">SEU PEDIDO</div><h2>CARRINHO<span>.</span></h2></div><button class="close-button" id="closeCart" aria-label="Fechar carrinho">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>▣</span><h3>SEU CARRINHO ESTÁ VAZIO</h3><p>Adicione produtos do catálogo para começar.</p></div>
+    <div class="drawer-bottom"><div class="total-row"><span>TOTAL</span><strong id="cartTotal">R$ 0,00</strong></div><button class="checkout-button" id="checkoutButton">CONTINUAR <span>→</span></button><small>Prévia de interface: conecte seu checkout/backend antes de receber pedidos.</small></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
